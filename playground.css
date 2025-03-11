@@ -1,0 +1,307 @@
+/* Form Builder Styles */
+/* Match with existing UI styles */
+body {
+    font-size: 16px;
+    color: #374151;
+    background-color: #ffffff;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Section List Styles */
+.sectionList {
+    overflow-y: auto;
+    height: 100vh;
+    background-color: #fafafa;
+    border-right: 1px solid #eeeff2;
+    font-size: 14px;
+    padding-left: 10px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateX(0);
+    opacity: 1;
+    padding: 20px;
+}
+.draggable-menu-item {
+    cursor: grab;
+    margin-bottom: 8px;
+    border: 0;
+    transition: transform 0.2s;
+}
+
+.draggable-menu-item:hover {
+    background-color: #f0f7ff;
+    transform: translateY(-2px);
+}
+
+.draggable-menu-item .card-body {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #404040;
+}
+
+/* Playground Styles */
+.playground-container {
+    height: 80vh;
+    overflow-y: auto;
+    border: 2px dashed #eeeff2;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.playground-container.dragover {
+    border-color: #49a2f5;
+    background-color: #e6f3ff;
+}
+
+.drop-message {
+    padding: 30px;
+    color: #989898;
+    font-size: 1.2rem;
+}
+
+/* Form Elements Styles */
+.form-element {
+    margin-bottom: 15px;
+    border: 1px solid #eeeff2;
+    border-radius: 7px;
+    transition: box-shadow 0.3s;
+}
+
+.form-element:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-element.dragging {
+    opacity: 0.6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.drag-handle {
+    cursor: grab;
+    user-select: none;
+}
+
+.drag-handle i {
+    color: #6c757d;
+}
+
+.element-controls button {
+    background: none;
+    border: none;
+    color: #989898;
+    transition: color 0.2s;
+}
+
+.element-controls .btn-edit:hover {
+    color: #49a2f5;
+}
+
+.element-controls .btn-delete:hover {
+    color: #f79d43;
+}
+
+/* Edit Panel Styles */
+.edit-container {
+    overflow-y: auto !important;
+    height: 100vh;
+    border-left: 1px solid #eeeff2;
+}
+
+.edit-panel {
+    padding: 15px;
+}
+
+/* IMPORTANT: Fixed visibility issue */
+.edit-container.idle {
+    background-image: radial-gradient(
+        circle at 1px 1px,
+        #eeeff2 1px,
+        transparent 0
+    );
+    background-size: 15px 15px;
+    background-position: 7px 7px;
+}
+
+.edit-container.idle::after {
+    color: #989898;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-style: italic;
+}
+
+.btn-save-element {
+    background-color: #050505;
+    border-color: #050505;
+    transition: background-color 0.2s;
+}
+
+.btn-save-element:hover {
+    background-color: #333;
+    border-color: #333;
+}
+
+.btn-add-option {
+    background-color: #ffffff;
+    color: #404040;
+    border: 1px solid #9d9d9d;
+}
+
+.btn-add-option:hover {
+    background-color: #e0e0e0;
+    color: #000000;
+}
+
+.builderTitle {
+    text-align: center;
+    margin: 10px;
+    color: #050505;
+    font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .sectionList {
+        position: absolute;
+        z-index: 9999;
+        transform: translateX(-100%);
+        opacity: 0;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .sectionList.show {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .edit-container {
+        width: 100%;
+        border: 0;
+    }
+
+    .edit-container.idle {
+        display: none;
+    }
+}
+
+/* File Upload Styles */
+.file-upload-container {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.dropbox {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    position: relative;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropbox:hover {
+    border-color: #999;
+    background-color: #f0f0f0;
+}
+
+.dropbox.dragover {
+    border-color: #4a90e2;
+    background-color: #e8f2fd;
+}
+
+.upload-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.upload-hint {
+    color: #999;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+#preview-container {
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.cancel-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 1;
+}
+
+.cancel-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Animated Form Fields */
+.form-label,
+.animated-label {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s;
+    display: block;
+}
+
+.form-label.visible,
+.animated-label.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-form {
+    border: 0;
+    border-bottom: solid 1px #9d9d9d;
+    border-radius: 0;
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* Save Form Button */
+.save-form-btn {
+    position: sticky;
+    bottom: 20px;
+    z-index: 100;
+    text-align: center;
+    margin-top: 20px;
+}
