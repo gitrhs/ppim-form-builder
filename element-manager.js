@@ -172,7 +172,7 @@ class FormElementsManager {
             case "banner":
                 return `
                     <div class="mb-0">
-                        <img src="/image/ppim1.png" alt="Banner" style="width: 100%; max-height: 200px; object-fit: contain;">
+                        <img src="/image/BANNERPPIM25-08.jpg" alt="Banner" style="width: 100%; max-height: 200px; object-fit: contain;">
                     </div>
                 `;
             case "text":
@@ -211,7 +211,7 @@ class FormElementsManager {
             case "checkbox":
                 return `
                     <div class="mb-0">
-                        <label class="form-label d-block">${label}</label>
+                        <label class="form-label">${label}</label>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="check1">
                             <label class="form-check-label" for="check1">Option 1</label>

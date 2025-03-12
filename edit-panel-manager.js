@@ -131,7 +131,8 @@ class EditPanelManager {
      */
     getBannerEditHTML(element) {
         const img = element.querySelector("img");
-        const imageSrc = img?.getAttribute("src") || "/image/ppim1.png";
+        const imageSrc =
+            img?.getAttribute("src") || "/image/BANNERPPIM25-08.jpg";
         const width = img?.style.width || "100%";
         const maxHeight = img?.style.maxHeight || "200px";
 

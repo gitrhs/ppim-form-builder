@@ -76,7 +76,8 @@ class CodeGenerator {
                     const img = element.querySelector("img");
                     if (img) {
                         elementData.imageSrc =
-                            img.getAttribute("src") || "/image/ppim1.png";
+                            img.getAttribute("src") ||
+                            "/image/BANNERPPIM25-08.jpg";
                         elementData.imageWidth = img.style.width || "100%";
                         elementData.imageMaxHeight =
                             img.style.maxHeight || "200px";
@@ -306,7 +307,8 @@ class CodeGenerator {
 
             case "banner":
                 const img = element.querySelector("img");
-                const imgSrc = img?.getAttribute("src") || "/image/ppim1.png";
+                const imgSrc =
+                    img?.getAttribute("src") || "/image/BANNERPPIM25-08.jpg";
                 const imgWidth = img?.style.width || "100%";
                 const imgMaxHeight = img?.style.maxHeight || "200px";
 
